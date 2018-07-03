@@ -1,0 +1,20 @@
+{
+  "widgets": {
+    "transactions": "250K",
+    "weather": "☀️",
+    "responsiveness": "99%",
+    "events": "28,320",
+    "hits": "9.12K",
+    "convertion": "69%",
+    "jsFrameworks": {
+      "range": [0, 10000],
+      "values": [9892, 8932, 4253, 1990, 1600],
+      "labels": ["vue.js", "react", "angular", "backbone", "jQuery"]
+    },
+    "topWines": {
+      "range": [0, 440000],
+      "values": [440000, 280953, 144500, 120040],
+      "labels": ["Haut Médoc", "Pessac", "Beaujolais", "Rioja"]
+    }
+  }
+}

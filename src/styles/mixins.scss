@@ -1,0 +1,63 @@
+@import "./variables.scss";
+
+@mixin flex-size($col: 6, $gutter: 1%) {
+  flex-basis: (100% / (6 / $col)) - $gutter * 2;
+}
+
+@mixin six-columns-layout($screen-type: desktop, $gutter: 1%) {
+  .#{$screen-type}-1-col {
+    @include flex-size(1, $gutter);
+  }
+  .#{$screen-type}-2-col {
+    @include flex-size(2, $gutter);
+  }
+  .#{$screen-type}-3-col {
+    @include flex-size(3, $gutter);
+  }
+  .#{$screen-type}-4-col {
+    @include flex-size(4, $gutter);
+  }
+  .#{$screen-type}-5-col {
+    @include flex-size(5, $gutter);
+  }
+  .#{$screen-type}-6-col {
+    @include flex-size(6, $gutter);
+  }
+}
+
+/** Grid Layout **/
+@mixin grid-6($element-selector) {
+  @at-root #{$element-selector + &} {
+    display: flex;
+    // if any margin, we want it spaced evenly
+    justify-content: space-evenly;
+    // we want all the widgest to have the same height when on the same line
+    align-items: stretch; 
+    // wrap the list of widgets over multiple lines if needed
+    flex-wrap: wrap;
+    @media (min-width: $nav-max-width) {
+      @include six-columns-layout(desktop);
+    }
+    @media (max-width: $nav-max-width) {
+      @include six-columns-layout(tablet);
+    }
+    @media (max-width: $mobile-size) {
+      @include six-columns-layout(phone);
+    }
+    .no-gutters {
+      [class*='desktop-'], [class*='tablet-'], [class*='phone-'] {
+        margin: 0 0 10px 0;
+      }
+    }
+    .relaxed-gutters {
+      [class*='desktop-'], [class*='tablet-'], [class*='phone-'] {
+        margin: 0 1% 10px 1%;
+      }
+    }
+    @media (max-width: $mobile-size) {
+      .relaxed-gutters {
+        @include six-columns-layout(phone, 2%);
+      }
+    }
+  }
+}
