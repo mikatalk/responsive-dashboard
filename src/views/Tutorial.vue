@@ -143,7 +143,7 @@ npm run serve</code></pre>
       </p>
       <p>
         For example for small metrics, we want a 6 column layout on desktop, 
-        3 comlumn layout on tablet and 2 column layout on mobile, so for each metric widget we add the following classes:
+        3 column layout on tablet and 2 column layout on mobile, so for each metric widget we add the following classes:
         <pre v-highlightjs><code class="javascript">phone-3-col tablet-2-col desktop-1-col</code></pre>
         If instead we're displaying a larger chart we would want to use a layout with a single column on all platforms.
         <pre v-highlightjs><code class="javascript">phone-6-col tablet-6-col desktop-6-col</code></pre>
@@ -285,7 +285,7 @@ export const loadDashboardData = ({ commit }) => {
       </p>
 
       <h4>mutations.js</h4>
-      <p>The action above commits two types of mutations. These are pure function that are never async.
+      <p>The action above commits two types of mutations. These are pure functions that are never async.
         <pre v-highlightjs><code class="javascript">import * as types from './mutations-types'
 export default {
   [types.SET_LOADING_STATE] (state, value) {
@@ -347,7 +347,7 @@ export default {
       <h2>
         4. HTML component
       </h2>
-      <p>Let's start with a simple text component that display data using HTML.
+      <p>Let's start with a simple text component that display data using HTML (<a href="https://github.com/mikatalk/responsive-dashboard/blob/master/src/components/grid/WidgetMetric.vue" target="_blank">source file</a>).
         <br/>
         This very basic component only takes two attributes
         which are <em>title</em> and <em>value</em>.
@@ -407,7 +407,7 @@ export default {
         react to the svg size, but that's out of scope for now.
       </p>
       <h4>
-        <em>WidgetChartSVG.vue</em>
+        <em>WidgetChartSVG.vue</em> (<a href="https://github.com/mikatalk/responsive-dashboard/blob/master/src/components/grid/WidgetChartSVG.vue" target="_blank">source file</a>)
         <chart-svg
           title="skills"
           :range="[0, 100]"
@@ -432,7 +432,8 @@ export default {
         initialize, destroy and resize our component in order to support various screen sizes and browser resize.
       </p>
       <p>
-        In this example we will be loading a <em>three.js</em> demo, without focusing on the webgl stuff too much,
+        In this example (<a href="https://github.com/mikatalk/responsive-dashboard/blob/master/src/components/grid/WidgetMap3D.vue" target="_blank">source file</a>)
+        we will be loading a <em>three.js</em> demo, without focusing on the webgl stuff too much,
         we will cover the key points to integrate it to your vue app.
       </p>
       <p>
@@ -440,7 +441,9 @@ export default {
         <pre v-highlightjs><code class="javascript">npm i three</code></pre>
       </p>
       <p>
-        All the three demo code is included in the <em>src/gl</em> directory. <br/>
+        All the three demo code is included in the
+        <a href="https://github.com/mikatalk/responsive-dashboard/blob/master/src/gl" target="_blank"> <em>src/gl</em> directory.</a>
+        <br/>
       </p>
       <p>
         The <em>GL.js</em> class has 3 methods that we will use from the vue component 
@@ -517,7 +520,8 @@ export default {
         This is done by dispatching <em>'widgets/loadDashboardData'</em>
       </p>
        <h4>
-        <em>Grid.vue</em>
+        <em>Grid.vue (<a href="https://github.com/mikatalk/responsive-dashboard/blob/master/src/components/grid/WidgetMap3D.vue" target="_blank">source file</a>)
+</em> 
       </h4>
       <pre v-highlightjs><code class="javascript">import WidgetMetric from '@/components/grid/WidgetMetric'
 import WidgetChartSVG from '@/components/grid/WidgetChartSVG'
@@ -644,8 +648,12 @@ export default {
       </p>
       <pre v-highlightjs><code class="javascript">npm run build</code></pre>
       <p>
-        Now sometimes you'll want to set up specific configs, here is for example a way to 
-        set the base url of your project, or the port number of the dev server:
+        Now sometimes you'll want to set up specific configs, all you need to do is to create a file 
+        <a href="https://github.com/mikatalk/responsive-dashboard/blob/master/vue.config.js" target="_blank">
+          vue.config.js
+        </a>
+        at the root of your project.
+        Below is for example a way to set the base url of your project, or the port number of the dev server:
         </p>
  <pre v-highlightjs><code class="javascript">module.exports = {
   baseUrl: process.env.NODE_ENV === 'production'
