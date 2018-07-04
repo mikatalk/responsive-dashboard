@@ -27,8 +27,12 @@
       
       <hr>
 
-      <h4>Checkout the final demo <a href="#demo" @click.prevent="$router.push('/demo')">here</a> and download the 
-        full source <a href="https://github.com/mikatalk/responsive-dashboard" target="_blank">here</a>.</h4>
+      <h4>Checkout the final demo <a href="#demo" @click.prevent="$router.push('/demo')">here</a>
+        <br/>
+        <br/>
+        Download the complete source code from
+        <a href="https://github.com/mikatalk/responsive-dashboard" target="_blank">github</a>.
+      </h4>
 
       <hr>
 
