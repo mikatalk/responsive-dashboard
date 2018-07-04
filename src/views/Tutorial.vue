@@ -28,7 +28,7 @@
       <hr>
 
       <h4>Checkout the final demo <a href="#demo" @click.prevent="$router.push('/demo')">here</a> and download the 
-        full source <a href="https://github.com/mikatalk/responsive-dashboard" target="_blank">there</a>.</h4>
+        full source <a href="https://github.com/mikatalk/responsive-dashboard" target="_blank">here</a>.</h4>
 
       <hr>
 
@@ -168,7 +168,8 @@ npm run serve</code></pre>
 
       
       <p>
-        Then we create a <em>dashboard-data.json</em> file containing our dashboard data (which would be the API response)
+        Then we create a <em>dashboard-data.json</em> file containing our dashboard data (which would be the API response). 
+        we create this json file inside the static directory <em>public/assets/</em>.
         <pre v-highlightjs><code class="json">{
   "widgets": {
     "transactions": "250K",
